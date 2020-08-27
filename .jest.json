@@ -1,0 +1,14 @@
+{
+  "testEnvironment": "node",
+  "testPathIgnorePatterns": [
+    "/node_modules/",
+    "/src/"
+  ],
+  "collectCoverageFrom": [
+    "!build/**/**/mocks/*.js",
+    "build/**/*.js",
+    "!build/**/*.test.js",
+    "!build/**/test/**/*.js",
+    "!**/node_modules/**"
+  ]
+}
