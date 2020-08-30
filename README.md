@@ -6,6 +6,19 @@
 Feel free to clone this repo, and use it for your own needs
 I tried to keep it as lean as possible (you can notice there is no DB connection here)
 
+## Included in the boilerplate
+
+- TypeScript (with module alias)
+- Development environment
+- Tests (using Jest)
+- Fastify
+- File based routing (using fastify-now)
+- Env vars config
+- CI with github actions
+- Docker image
+- Linting
+
+**BYODB - Bring your owns database** meaning no database connection included
 
 ## Set Up
 
@@ -23,9 +36,18 @@ npm install
 npm run dev
 ```
 
+## File Based Routing
+
+Using [fastify-now](https://github.com/yonathan06/fastify-now) for file based routing
+
+## Env vars
+
+Put your env vars on `{process.env.NODE_ENV}.env`
+e.g. for development env vars use `development.env`, for production use `production.env`, and so on
+Using `process.env.NODE_ENV` value for loading the env file
+
 ## Backend API Development
 
-​
 There are a number of handy commands you can run to help with development.
 ​
 |Command | Action |
@@ -47,6 +69,11 @@ Check `.github/workflows/CI.yml`
 
 Build docker image AFTER executing `npm run build`
 The docker image copies the `build` directory, so it has to be present
+
+## Recommended Vscode Extensions
+
+[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 ### Inspiration
 
