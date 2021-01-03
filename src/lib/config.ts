@@ -1,6 +1,6 @@
 import path from 'path';
 import envSchema from 'env-schema';
-import S from 'fluent-schema';
+import S from 'fluent-json-schema';
 
 export default function loadConfig(): void {
   const result = require('dotenv').config({
