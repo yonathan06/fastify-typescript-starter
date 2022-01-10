@@ -1,1 +1,2 @@
 test-regex: ((\/|^)(tests?|__tests?__)\/.*|\.(tests?|spec)|^\/?tests?)\.([mc]js|[j]sx?)$
+check-coverage: false
