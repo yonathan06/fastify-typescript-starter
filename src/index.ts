@@ -4,7 +4,7 @@ import fastify from 'fastify';
 import now from 'fastify-now';
 
 // Load env vars
-import loadConfig from '@lib/config';
+import loadConfig from './lib/config';
 loadConfig();
 
 export async function createServer() {
@@ -31,15 +31,13 @@ export async function startServer() {
   const server = await createServer();
   await server.listen(+process.env.API_PORT, process.env.API_HOST);
 
-  if (process.env.NODE_ENV === 'production') {
-    for (const signal of ['SIGINT', 'SIGTERM']) {
-      process.on(signal, () =>
-        server.close().then((err) => {
-          console.log(`close application on ${signal}`);
-          process.exit(err ? 1 : 0);
-        }),
-      );
-    }
+  for (const signal of ['SIGINT', 'SIGTERM']) {
+    process.on(signal, () =>
+      server.close().then((err) => {
+        console.log(`close application on ${signal}`);
+        process.exit(err ? 1 : 0);
+      }),
+    );
   }
 }
 

@@ -1,9 +1,11 @@
 import { createServer } from './index';
+import tap from 'tap';
 
-describe('Server', () => {
-  it('Should return server instance', async () => {
+tap.only('Server', (t) => {
+  t.plan(1);
+  t.test('Should return server instance', async (t) => {
     const server = await createServer();
-    expect(server).toBeDefined();
+    t.match(typeof server, 'object');
     await server.close();
   });
 });

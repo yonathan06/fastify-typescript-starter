@@ -1,6 +1,21 @@
+/* eslint-disable @typescript-eslint/no-namespace */
 import path from 'path';
 import envSchema from 'env-schema';
-import S from 'fluent-json-schema';
+import { Static, Type } from '@sinclair/typebox';
+
+export enum NodeEnv {
+  development = 'development',
+  test = 'test',
+  production = 'production',
+}
+
+const ConfigSchema = Type.Object({
+  NODE_ENV: Type.Enum(NodeEnv),
+  API_HOST: Type.String(),
+  API_PORT: Type.String(),
+});
+
+export type Config = Static<typeof ConfigSchema>;
 
 export default function loadConfig(): void {
   const result = require('dotenv').config({
@@ -13,9 +28,6 @@ export default function loadConfig(): void {
 
   envSchema({
     data: result.parsed,
-    schema: S.object()
-      .prop('NODE_ENV', S.string().enum(['development', 'testing', 'production']).required())
-      .prop('API_HOST', S.string().required())
-      .prop('API_PORT', S.string().required()),
+    schema: Type.Strict(ConfigSchema),
   });
 }

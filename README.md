@@ -23,14 +23,12 @@ I tried to keep it as lean as possible (you can notice there is no DB connection
 ## Set Up
 
 - Install the dependencies.
-  ​
 
 ```bash
 npm install
 ```
 
 - Start the server in development mode.
-  ​
 
 ```bash
 npm run dev
@@ -42,14 +40,14 @@ Using [fastify-now](https://github.com/yonathan06/fastify-now) for file based ro
 
 ## Env vars
 
-Put your env vars on `{process.env.NODE_ENV}.env`
-e.g. for development env vars use `development.env`, for production use `production.env`, and so on
+Put your env vars on `.env.{process.env.NODE_ENV}`
+e.g. for development env vars use `.env.development`, for production use `.env.production`, and so on
 Using `process.env.NODE_ENV` value for loading the env file
 
 ## Backend API Development
 
 There are a number of handy commands you can run to help with development.
-​
+
 |Command | Action |
 |---|---|
 |`npm run dev` | Run the server in dev mode, automatically restarts on file change |

@@ -1,22 +1,22 @@
 import { FastifyInstance } from 'fastify';
 import { createServer } from '../index';
+import tap from 'tap';
 
-describe('GET /', () => {
-  let server: FastifyInstance;
-  beforeAll(async () => {
+let server: FastifyInstance;
+tap.test('GET /', (t) => {
+  t.before(async () => {
     server = await createServer();
   });
-
-  afterAll(async () => {
+  t.teardown(async () => {
     await server.close();
   });
-
-  it('Should return hello world', async () => {
+  t.plan(1);
+  t.test('Should return hello world', async (t) => {
     const response = await server.inject({
       method: 'GET',
       path: '/',
     });
-    expect(response.statusCode).toBe(200);
-    expect(response.json()).toEqual({ hello: 'world' });
+    t.match(response.statusCode, 200);
+    t.match(response.json(), { hello: 'world' });
   });
 });
