@@ -19,7 +19,7 @@ export type Config = Static<typeof ConfigSchema>;
 
 export default function loadConfig(): void {
   const result = require('dotenv').config({
-    path: path.join(__dirname, `../../${process.env.NODE_ENV ?? 'development'}.env`),
+    path: path.join(__dirname, `../../.env.${process.env.NODE_ENV ?? 'development'}`),
   });
 
   if (result.error) {
