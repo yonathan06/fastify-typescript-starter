@@ -1,5 +1,5 @@
 {
-  "name": "fastify-typescript-boilerplate",
+  "name": "fastify-typescript-starter",
   "version": "1.0.0",
   "description": "Node.js boilerplate using fastify & TypeScript",
   "main": "build/index.js",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yonathan06/fastify-typescript-boilerplate.git"
+    "url": "git+https://github.com/yonathan06/fastify-typescript-starter.git"
   },
   "engines": {
     "node": ">=16.0.0"
@@ -30,9 +30,9 @@
   "author": "Yonatan Bendahan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yonathan06/fastify-typescript-boilerplate/issues"
+    "url": "https://github.com/yonathan06/fastify-typescript-starter/issues"
   },
-  "homepage": "https://github.com/yonathan06/fastify-typescript-boilerplate#readme",
+  "homepage": "https://github.com/yonathan06/fastify-typescript-starter#readme",
   "devDependencies": {
     "@types/node": "^16.11.19",
     "@types/tap": "^15.0.5",
