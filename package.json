@@ -51,6 +51,7 @@
   },
   "dependencies": {
     "@sinclair/typebox": "^0.23.2",
+    "dotenv": "^16.0.0",
     "env-schema": "^3.5.1",
     "fastify": "^3.25.3",
     "fastify-now": "^2.5.2"
