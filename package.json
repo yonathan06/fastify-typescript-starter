@@ -52,7 +52,7 @@
   "dependencies": {
     "@sinclair/typebox": "^0.23.2",
     "ajv": "^8.11.0",
-    "dotenv": "^14.3.2",
+    "dotenv": "^16.0.0",
     "env-schema": "^3.5.1",
     "fastify": "^3.25.3",
     "fastify-now": "^2.7.1",
