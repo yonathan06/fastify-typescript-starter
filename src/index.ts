@@ -1,35 +1,27 @@
-import path from 'path';
-
+import path from "node:path";
+import { URL } from "node:url";
 import fastify from 'fastify';
+import config from './plugins/config.js';
 import now from 'fastify-now';
 
-// Load env vars
-import loadConfig from './lib/config';
-loadConfig();
+const server = fastify({
+  logger: {
+    level: process.env.LOG_LEVEL,
+  },
+});
 
-export async function createServer() {
-  const server = fastify({
-    logger: {
-      level: process.env.LOG_LEVEL,
-    },
-  });
+await server.register(config);
+await server.register(now, {
+  routesFolder: new URL(path.join(import.meta.url, "../routes")).pathname,
+});
+await server.ready();
 
-  server.register(now, {
-    routesFolder: path.join(__dirname, './routes'),
-  });
-
-  await server.ready();
-  return server;
-}
-
-export async function startServer() {
+if (process.env.NODE_ENV !== 'test') {
   process.on('unhandledRejection', (err) => {
     console.error(err);
     process.exit(1);
   });
-
-  const server = await createServer();
-  await server.listen(+process.env.API_PORT, process.env.API_HOST);
+  await server.listen(+server.config.API_PORT, server.config.API_HOST);
 
   for (const signal of ['SIGINT', 'SIGTERM']) {
     process.on(signal, () =>
@@ -39,8 +31,4 @@ export async function startServer() {
       }),
     );
   }
-}
-
-if (process.env.NODE_ENV !== 'test') {
-  startServer();
 }

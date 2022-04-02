@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "Node.js boilerplate using fastify & TypeScript",
   "main": "build/index.js",
+  "type": "module",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "check:types": "tsc --noEmit",
-    "build": "esbuild-node-tsc",
+    "build": "esbuild `find src \\( -name '*.ts' \\)` --platform=node --outdir=build --resolve-extensions=.js",
     "build:docker:prod": "docker build . -t my-fastify-app --build-arg APP_ENV=production",
     "start": "node build",
     "dev": "nodemon | pino-pretty --colorize",
@@ -39,7 +40,6 @@
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
     "esbuild": "^0.14.11",
-    "esbuild-node-tsc": "^1.8.2",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -51,8 +51,11 @@
   },
   "dependencies": {
     "@sinclair/typebox": "^0.23.2",
+    "ajv": "^8.11.0",
+    "dotenv": "^14.3.2",
     "env-schema": "^3.5.1",
     "fastify": "^3.25.3",
-    "fastify-now": "^2.5.2"
+    "fastify-now": "^2.7.1",
+    "fastify-plugin": "^3.0.1"
   }
 }
