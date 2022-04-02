@@ -16,6 +16,8 @@ await server.register(now, {
 });
 await server.ready();
 
+export default server;
+
 if (process.env.NODE_ENV !== 'test') {
   process.on('unhandledRejection', (err) => {
     console.error(err);

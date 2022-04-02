@@ -1,15 +1,7 @@
-import { FastifyInstance } from 'fastify';
-import { createServer } from '../index';
+import server from '../index.js';
 import tap from 'tap';
 
-let server: FastifyInstance;
 tap.test('GET /', (t) => {
-  t.before(async () => {
-    server = await createServer();
-  });
-  t.teardown(async () => {
-    await server.close();
-  });
   t.plan(1);
   t.test('Should return hello world', async (t) => {
     const response = await server.inject({
