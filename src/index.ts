@@ -5,6 +5,13 @@ import config from './plugins/config.js';
 import now from 'fastify-now';
 
 const server = fastify({
+  ajv: {
+    customOptions: {
+      removeAdditional: "all",
+      coerceTypes: true,
+      useDefaults: true,
+    }
+  },
   logger: {
     level: process.env.LOG_LEVEL,
   },
