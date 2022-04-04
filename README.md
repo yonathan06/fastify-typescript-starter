@@ -8,12 +8,11 @@ I tried to keep it as lean as possible (you can notice there is no DB connection
 
 ## Included in the boilerplate
 
-- TypeScript (with module alias)
-- Development environment
-- Tests (using Jest)
+- TypeScript (using esbuild for fast compilation)
+- Env vars
+- Tests (using Tap)
 - Fastify
 - File based routing (using fastify-now)
-- Env vars config
 - CI with github actions
 - Docker image
 - Linting
@@ -25,14 +24,18 @@ I tried to keep it as lean as possible (you can notice there is no DB connection
 - Install the dependencies.
 
 ```bash
-npm install
+pnpm install
 ```
+
+or npm/yarn
 
 - Start the server in development mode.
 
 ```bash
-npm run dev
+pnpm dev
 ```
+
+or npm/yarn
 
 ## File Based Routing
 
@@ -40,9 +43,7 @@ Using [fastify-now](https://github.com/yonathan06/fastify-now) for file based ro
 
 ## Env vars
 
-Put your env vars on `.env.{process.env.NODE_ENV}`
-e.g. for development env vars use `.env.development`, for production use `.env.production`, and so on
-Using `process.env.NODE_ENV` value for loading the env file
+Loaded from `.env` file, with schema validation
 
 ## Backend API Development
 
@@ -50,13 +51,13 @@ There are a number of handy commands you can run to help with development.
 
 |Command | Action |
 |---|---|
-|`npm run dev` | Run the server in dev mode, automatically restarts on file change |
-|`npm run build`| Compile TypeScript to JavaScript |
-|`npm run start`| Start JavaScript from 'build' directory |
-|`npm test`| Run unit tests |
-|`npm run test:watch`| Run backend tests in watch mode, running on changed test files |
-|`npm run lint`| Run eslint |
-|`npm run lint:fix`| Run eslint in fix mode |
+|`pnpm run dev` | Run the server in dev mode, automatically restarts on file change |
+|`pnpm build`| Compile TypeScript to JavaScript |
+|`pnpm start`| Start JavaScript from 'build' directory |
+|`pnpm test`| Run unit tests |
+|`pnpm test:watch`| Run backend tests in watch mode, running on changed test files |
+|`pnpm lint`| Run eslint |
+|`pnpm lint:fix`| Run eslint in fix mode |
 
 ## CI
 
@@ -72,7 +73,3 @@ The docker image copies the `build` directory, so it has to be present
 
 [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-
-### Inspiration
-
-This boilerplate is inspired by NearForm [COVID tracker backend](https://github.com/HSEIreland/covid-tracker-backend-api), built for Ireland Health Service.
