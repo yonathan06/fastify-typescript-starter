@@ -1,10 +1,15 @@
-# Node.js boilerplate using Fastify & TypeScript
+# Node.js starter using Fastify & TypeScript
 
 ![ci badge](https://github.com/yonathan06/fastify-typescript-boilerplate/workflows/CI/badge.svg)
 [![Sync Vulnerabilities Status](https://app.snyk.io/test/github/yonathan06/fastify-typescript-boilerplate/badge.svg)](https://snyk.io/test/github/yonathan06/fastify-typescript-boilerplate)
 
-Feel free to clone this repo, and use it for your own needs
-I tried to keep it as lean as possible (you can notice there is no DB connection here)
+Create a new server:
+```bash
+pnpx degit yonathan06/fastify-typescript-starter my-server
+```
+or `npx`.
+
+See [degit](https://github.com/Rich-Harris/degit) docs for detailed explaination 
 
 ## Included in the boilerplate
 
@@ -12,12 +17,12 @@ I tried to keep it as lean as possible (you can notice there is no DB connection
 - Env vars
 - Tests (using Tap)
 - Fastify
-- File based routing (using fastify-now)
+- File based routing (using [fastify-now](https://github.com/yonathan06/fastify-now))
 - CI with github actions
 - Docker image
 - Linting
 
-**BYODB - Bring your owns database** meaning no database connection included
+**BYODB - Bring your own database** - no database connection included
 
 ## Set Up
 
@@ -54,7 +59,7 @@ There are a number of handy commands you can run to help with development.
 |`pnpm run dev` | Run the server in dev mode, automatically restarts on file change |
 |`pnpm build`| Compile TypeScript to JavaScript |
 |`pnpm start`| Start JavaScript from 'build' directory |
-|`pnpm test`| Run unit tests |
+|`pnpm test`| Run unit tests (run `pnpm build` before) |
 |`pnpm test:watch`| Run backend tests in watch mode, running on changed test files |
 |`pnpm lint`| Run eslint |
 |`pnpm lint:fix`| Run eslint in fix mode |
