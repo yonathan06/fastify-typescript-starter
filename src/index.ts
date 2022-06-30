@@ -30,7 +30,9 @@ if (process.env.NODE_ENV !== 'test') {
     console.error(err);
     process.exit(1);
   });
-  await server.listen(+server.config.API_PORT, server.config.API_HOST);
+  const port = +server.config.API_PORT;
+  const host = server.config.API_HOST;
+  await server.listen({ host, port });
 
   for (const signal of ['SIGINT', 'SIGTERM']) {
     process.on(signal, () =>
