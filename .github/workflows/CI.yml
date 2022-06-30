@@ -5,9 +5,9 @@ name: CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [main]
   pull_request:
-    branches: [ master ]
+    branches: [main]
 
 
 jobs:
@@ -18,8 +18,8 @@ jobs:
     - name: Setup node.js
       uses: actions/setup-node@v1
       with:
-        node-version: '14.x'
-    - name: NPM Install
+        node-version: '16.x'
+    - name: Install dependencies
       run: npm install
     - name: Lint
       run: npm run lint
