@@ -10,7 +10,7 @@
     "build": "esbuild `find src \\( -name '*.ts' \\)` --platform=node --outdir=build --resolve-extensions=.js",
     "build:docker:prod": "docker build . -t my-fastify-app --build-arg APP_ENV=production",
     "start": "node build",
-    "dev": "NODE_ENV=development tsx watch src .env | pino-pretty --colorize",
+    "dev": "tsx watch src .env | pino-pretty --colorize",
     "pretest": "npm run build",
     "test": "NODE_ENV=test tap",
     "test:watch": "NODE_ENV=test tap -w"
