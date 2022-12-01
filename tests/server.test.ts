@@ -1,4 +1,4 @@
-import server from './index.js';
+import server from './src/server.js';
 import tap from 'tap';
 
 tap.only('Server', (t) => {

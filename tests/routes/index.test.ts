@@ -1,4 +1,4 @@
-import server from '../index.js';
+import server from '../../src/server';
 import tap from 'tap';
 
 tap.test('GET /', (t) => {
