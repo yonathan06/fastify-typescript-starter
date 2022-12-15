@@ -1,10 +1,10 @@
-import server from './src/server.js';
-import tap from 'tap';
+import server from '../src/server.js';
+import { test, describe, expect } from 'vitest';
 
-tap.only('Server', (t) => {
-  t.plan(1);
-  t.test('Should return server instance', async (t) => {
-    t.match(typeof server, 'object');
+
+describe('Server', () => {
+  test('Should return server instance', async () => {
+    expect(typeof server).eq('object');
     await server.close();
   });
 });

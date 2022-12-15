@@ -1,16 +1,18 @@
-import { NowRequestHandler } from 'fastify-now';
 import { Type } from '@sinclair/typebox';
+import {FastifyPluginAsync} from 'fastify';
 
-export const GET: NowRequestHandler = async function () {
-  return { hello: 'world' };
-};
+const routes: FastifyPluginAsync = async (server) => {
+  server.get('/', {
+   schema: {
+      response: {
+        200: Type.Object({
+          hello: Type.String(),
+        }),
+      },
+    }, 
+  }, async function () {
+    return { hello: 'world' };
+  });
+}
 
-GET.opts = {
-  schema: {
-    response: {
-      200: Type.Object({
-        hello: Type.String(),
-      }),
-    },
-  },
-};
+export default routes;

@@ -1,8 +1,6 @@
-import path from "node:path";
-import { URL } from "node:url";
 import fastify from 'fastify';
 import config from './plugins/config.js';
-import now from 'fastify-now';
+import routes from './routes';
 
 const server = fastify({
   ajv: {
@@ -18,9 +16,7 @@ const server = fastify({
 });
 
 await server.register(config);
-await server.register(now, {
-  routesFolder: new URL(path.join(import.meta.url, "../routes")).pathname,
-});
+await server.register(routes);
 await server.ready();
 
 export default server;

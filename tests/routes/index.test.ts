@@ -1,14 +1,13 @@
 import server from '../../src/server';
-import tap from 'tap';
+import { describe, test, expect } from 'vitest';
 
-tap.test('GET /', (t) => {
-  t.plan(1);
-  t.test('Should return hello world', async (t) => {
+describe('GET /', () => {
+  test('Should return hello world', async () => {
     const response = await server.inject({
       method: 'GET',
       path: '/',
     });
-    t.match(response.statusCode, 200);
-    t.match(response.json(), { hello: 'world' });
+    expect(response.statusCode).eq(200);
+    expect(response.json()).deep.eq({ hello: 'world' });
   });
 });
