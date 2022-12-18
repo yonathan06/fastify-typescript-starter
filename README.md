@@ -13,11 +13,10 @@ See [degit](https://github.com/Rich-Harris/degit) docs for detailed explaination
 
 ## Included in the boilerplate
 
-- TypeScript (using esbuild for fast compilation)
+- TypeScript (using esbuild for fast compilation, and tsx for development)
 - Env vars
-- Tests (using Tap)
+- Tests (using Vitest)
 - Fastify
-- File based routing (using [fastify-now](https://github.com/yonathan06/fastify-now))
 - CI with github actions
 - Docker image
 - Linting
@@ -41,10 +40,6 @@ pnpm dev
 ```
 
 or npm/yarn
-
-## File Based Routing
-
-Using [fastify-now](https://github.com/yonathan06/fastify-now) for file based routing
 
 ## Env vars
 
