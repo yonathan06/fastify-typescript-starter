@@ -61,7 +61,7 @@ There are a number of handy commands you can run to help with development.
 
 ## CI
 
-Run tests on push/PR to master
+Run tests on push/PR to 'main' branch
 Check `.github/workflows/CI.yml`
 
 ## Recommended Vscode Extensions
