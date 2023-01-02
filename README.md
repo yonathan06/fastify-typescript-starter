@@ -61,13 +61,8 @@ There are a number of handy commands you can run to help with development.
 
 ## CI
 
-Run tests on push/PR to master
+Run tests on push/PR to 'main' branch
 Check `.github/workflows/CI.yml`
-
-## Docker
-
-Build docker image AFTER executing `npm run build`
-The docker image copies the `build` directory, so it has to be present
 
 ## Recommended Vscode Extensions
 
