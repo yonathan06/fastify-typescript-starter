@@ -1,6 +1,6 @@
 import fastify from 'fastify';
 import config from './plugins/config.js';
-import routes from './routes';
+import routes from './routes/index.js';
 
 const server = fastify({
   ajv: {

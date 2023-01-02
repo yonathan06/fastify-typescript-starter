@@ -1,5 +1,5 @@
 import { Type } from '@sinclair/typebox';
-import {FastifyPluginAsync} from 'fastify';
+import { FastifyPluginAsync } from 'fastify';
 
 const routes: FastifyPluginAsync = async (server) => {
   server.get('/', {

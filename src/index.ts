@@ -1,4 +1,4 @@
-import server from './server';
+import server from './server.js';
 
 process.on('unhandledRejection', (err) => {
   console.error(err);
