@@ -20,7 +20,6 @@ See [degit](https://github.com/Rich-Harris/degit) docs for detailed explaination
 - CI with github actions
 - Docker image
 - Linting
-- ESM (can be opt out by changing the tsconfig: https://www.typescriptlang.org/docs/handbook/esm-node.html)
 
 **BYODB - Bring your own database** - no database connection included
 
