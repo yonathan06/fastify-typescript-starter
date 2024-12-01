@@ -10,14 +10,12 @@ export enum NodeEnv {
   production = "production",
 }
 
-const ConfigSchema = Type.Strict(
-  Type.Object({
-    NODE_ENV: Type.Enum(NodeEnv),
-    LOG_LEVEL: Type.String(),
-    API_HOST: Type.String(),
-    API_PORT: Type.String(),
-  })
-);
+const ConfigSchema = Type.Object({
+  NODE_ENV: Type.Enum(NodeEnv),
+  LOG_LEVEL: Type.String(),
+  API_HOST: Type.String(),
+  API_PORT: Type.String(),
+});
 
 const ajv = new Ajv({
   allErrors: true,
@@ -38,7 +36,7 @@ const configPlugin: FastifyPluginAsync = async (server) => {
         JSON.stringify(validate.errors, null, 2)
     );
   }
-  server.decorate("config", process.env);
+  server.decorate("config", process.env as Config);
 };
 
 declare module "fastify" {

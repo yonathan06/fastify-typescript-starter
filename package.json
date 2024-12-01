@@ -20,7 +20,7 @@
     "url": "git+https://github.com/yonathan06/fastify-typescript-starter.git"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=22.0.0"
   },
   "keywords": [
     "nodejs",
@@ -34,25 +34,25 @@
   },
   "homepage": "https://github.com/yonathan06/fastify-typescript-starter#readme",
   "dependencies": {
-    "@sinclair/typebox": "^0.23.5",
-    "ajv": "^8.11.2",
-    "dotenv": "^16.0.3",
-    "env-schema": "^5.1.1",
-    "fastify": "^4.10.2",
-    "fastify-plugin": "^3.0.1"
+    "@sinclair/typebox": "^0.34.9",
+    "ajv": "^8.17.1",
+    "dotenv": "^16.4.5",
+    "env-schema": "^6.0.0",
+    "fastify": "^5.1.0",
+    "fastify-plugin": "^5.0.1"
   },
   "devDependencies": {
-    "@types/node": "^18.11.15",
-    "@typescript-eslint/eslint-plugin": "^5.45.0",
-    "@typescript-eslint/parser": "^5.45.0",
-    "esbuild": "^0.14.54",
-    "eslint": "^8.28.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "pino-pretty": "^8.1.0",
-    "prettier": "^2.8.0",
-    "tsx": "^3.12.1",
-    "typescript": "^4.9.3",
-    "vitest": "^0.25.8"
+    "@types/node": "^22.10.1",
+    "@typescript-eslint/eslint-plugin": "^8.16.0",
+    "@typescript-eslint/parser": "^8.16.0",
+    "esbuild": "^0.24.0",
+    "eslint": "^9.16.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "pino-pretty": "^13.0.0",
+    "prettier": "^3.4.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.6"
   }
 }
