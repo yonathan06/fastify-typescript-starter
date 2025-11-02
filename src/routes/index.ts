@@ -1,18 +1,20 @@
 import { Type } from '@sinclair/typebox';
-import { FastifyPluginAsync } from 'fastify';
+import type { FastifyPluginAsync } from 'fastify';
 
 const routes: FastifyPluginAsync = async (server) => {
-  server.get('/', {
-   schema: {
-      response: {
-        200: Type.Object({
-          hello: Type.String(),
-        }),
-      },
-    }, 
-  }, async function () {
-    return { hello: 'world' };
-  });
-}
+	server.get(
+		'/',
+		{
+			schema: {
+				response: {
+					200: Type.Object({
+						hello: Type.String(),
+					}),
+				},
+			},
+		},
+		async () => ({ hello: 'world' }),
+	);
+};
 
 export default routes;

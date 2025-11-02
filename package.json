@@ -1,58 +1,50 @@
 {
-  "name": "fastify-typescript-starter",
-  "version": "1.5.0",
-  "description": "Node.js boilerplate using fastify & TypeScript",
-  "type": "module",
-  "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "check:types": "tsc --noEmit",
-    "build": "esbuild `find src \\( -name '*.ts' \\)` --platform=node --outdir=build --resolve-extensions=.js",
-    "build:docker:prod": "docker build . -t my-fastify-app --build-arg APP_ENV=production",
-    "start": "node build",
-    "dev": "tsx watch src .env | pino-pretty --colorize",
-    "pretest": "npm run build",
-    "test": "vitest",
-    "test:watch": "vitest -w"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yonathan06/fastify-typescript-starter.git"
-  },
-  "engines": {
-    "node": ">=22.0.0"
-  },
-  "keywords": [
-    "nodejs",
-    "fastify",
-    "typescript"
-  ],
-  "author": "Yonatan Bendahan",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/yonathan06/fastify-typescript-starter/issues"
-  },
-  "homepage": "https://github.com/yonathan06/fastify-typescript-starter#readme",
-  "dependencies": {
-    "@sinclair/typebox": "^0.34.9",
-    "ajv": "^8.17.1",
-    "dotenv": "^16.4.5",
-    "env-schema": "^6.0.0",
-    "fastify": "^5.1.0",
-    "fastify-plugin": "^5.0.1"
-  },
-  "devDependencies": {
-    "@types/node": "^22.10.1",
-    "@typescript-eslint/eslint-plugin": "^8.16.0",
-    "@typescript-eslint/parser": "^8.16.0",
-    "esbuild": "^0.24.0",
-    "eslint": "^9.16.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "pino-pretty": "^13.0.0",
-    "prettier": "^3.4.1",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.2",
-    "vitest": "^2.1.6"
-  }
+	"name": "fastify-typescript-starter",
+	"version": "1.5.0",
+	"description": "Node.js boilerplate using fastify & TypeScript",
+	"type": "module",
+	"scripts": {
+		"lint": "biome check",
+		"check:types": "tsc --noEmit",
+		"build": "esbuild `find src \\( -name '*.ts' \\)` --platform=node --outdir=build --resolve-extensions=.js",
+		"build:docker:prod": "docker build . -t my-fastify-app --build-arg APP_ENV=production",
+		"start": "node build",
+		"dev": "tsx watch src .env | pino-pretty --colorize",
+		"test": "vitest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yonathan06/fastify-typescript-starter.git"
+	},
+	"engines": {
+		"node": ">=22.0.0"
+	},
+	"keywords": [
+		"nodejs",
+		"fastify",
+		"typescript"
+	],
+	"author": "Yonatan Bendahan",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/yonathan06/fastify-typescript-starter/issues"
+	},
+	"homepage": "https://github.com/yonathan06/fastify-typescript-starter#readme",
+	"dependencies": {
+		"@sinclair/typebox": "^0.34.9",
+		"ajv": "^8.17.1",
+		"dotenv": "^16.4.5",
+		"env-schema": "^6.0.0",
+		"fastify": "^5.1.0",
+		"fastify-plugin": "^5.0.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.3.2",
+		"@types/node": "^22.10.1",
+		"esbuild": "^0.24.0",
+		"pino-pretty": "^13.0.0",
+		"tsx": "^4.19.2",
+		"typescript": "^5.7.2",
+		"vitest": "^2.1.6"
+	}
 }
